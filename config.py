@@ -1,0 +1,3 @@
+# FILE PATHS
+SRC_FOLDER = "./train1000"
+DST_FOLDER = "./dst"
