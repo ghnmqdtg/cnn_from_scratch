@@ -28,15 +28,35 @@ def model():
 
 
 if __name__ == '__main__':
-    # 81
-    np.random.seed(2)
+    # 81.4 at 204
+    # np.random.seed(2)
 
+    # 52.2 at 1000
+    # np.random.seed(3)
+
+    # 74.3 at 290
+    # np.random.seed(4)
+
+    # 88.0 at 12
+    # np.random.seed(5)
+
+    # 65.8 at 52
+    # np.random.seed(6)
+
+    # 81.9 at 171
+    # np.random.seed(7)
+
+    # 81.9 at 171
+    np.random.seed(8)
+
+    # Create destination directory
     utils.create_folder(config.DST_FOLDER)
-
+    # Load dataset
     dataset_generator = DatasetGenerator(config.SRC_FOLDER)
     X, Y = dataset_generator.prepare()
+    # Init the model
     network = model()
-
+    # Train the model
     train(
         network,
         mse,

@@ -3,6 +3,10 @@ from utils.layers import Layer
 
 
 class Activation(Layer):
+    """
+    Activation layer
+    """
+
     def __init__(self, activation, activation_prime):
         self.activation = activation
         self.activation_prime = activation_prime
@@ -16,6 +20,10 @@ class Activation(Layer):
 
 
 class Sigmoid(Activation):
+    """
+    Sigmoid activation layer and its derivatives
+    """
+
     def __init__(self):
         def sigmoid(x):
             return 1 / (1 + np.exp(-x))
@@ -28,15 +36,16 @@ class Sigmoid(Activation):
 
 
 class Softmax(Layer):
+    """
+    Softmax layer and its derivatives
+    """
+
     def forward(self, input):
         tmp = np.exp(input)
         self.output = tmp / np.sum(tmp)
         return self.output
 
     def backward(self, output_gradient, learning_rate):
-        # This version is faster than the one presented in the video
         n = np.size(self.output)
-        return np.dot((np.identity(n) - self.output.T) * self.output, output_gradient)
-        # Original formula:
-        # tmp = np.tile(self.output, n)
-        # return np.dot(tmp * (np.identity(n) - np.transpose(tmp)), output_gradient)
+        tmp = np.tile(self.output, n)
+        return np.dot(tmp * (np.identity(n) - np.transpose(tmp)), output_gradient)

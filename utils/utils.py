@@ -94,6 +94,19 @@ def parse_folder(folder: str):
 
 
 def plot_results(file_paths, preds, labels):
+    """
+    Plot and save the results
+
+    Parameters
+    ----------
+    file_paths : list
+        List of file paths
+    preds : list
+        List of predictions
+    labels : list
+        List of labels
+    """
+
     fig, axs = plt.subplots(3, 5, figsize=(12, 6))
     fig.suptitle('Shuffle Testing', fontsize=20)
 
@@ -117,6 +130,15 @@ def plot_results(file_paths, preds, labels):
 
 
 def plot_confusion_matrix(confusion_matrix):
+    """
+    Plot and save the confusion matrix
+
+    Parameters
+    ----------
+    confusion_matrix : list
+        List of confusion matrices
+    """
+
     df = pd.DataFrame(confusion_matrix,
                       index=[i for i in "01"],
                       columns=[i for i in "01"])
