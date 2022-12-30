@@ -2,3 +2,4 @@
 /train1000/**
 !/train1000/train1000_label.txt
 **.DS_Store
+test.py
