@@ -108,7 +108,7 @@ def plot_results(file_paths, preds, labels):
     """
 
     fig, axs = plt.subplots(3, 5, figsize=(12, 6))
-    fig.suptitle('Shuffle Testing', fontsize=20)
+    fig.suptitle('Sampling Test', fontsize=20)
 
     for idx, (file_path, pred, true) in enumerate(zip(file_paths, preds, labels)):
         row = idx // 5
@@ -144,5 +144,7 @@ def plot_confusion_matrix(confusion_matrix):
                       columns=[i for i in "01"])
 
     plt.figure(figsize=(10, 7))
-    sn.heatmap(df, annot=True)
+    plt.title('Confusion matrix', fontdict={'fontsize': 28})
+    plt.tick_params(labelsize=24)
+    sn.heatmap(df, annot=True, annot_kws={'size': 32})
     plt.savefig(f'{config.DST_FOLDER}/confusion_matrix.jpg')

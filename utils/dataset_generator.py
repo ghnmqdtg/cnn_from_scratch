@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------
+# Filename    : dataset_generator.py
+# Created By  : Ting-Wei, Zhang (ghnmqdtg)
+# Created Date: 2022/12/23
+# version ='1.0'
+# ----------------------------------------------------------------------------
 import os
 import cv2
 import numpy as np

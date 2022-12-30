@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------
+# Filename    : network.py
+# Created By  : Ting-Wei, Zhang (ghnmqdtg)
+# Created Date: 2022/12/23
+# version ='1.0'
+# ----------------------------------------------------------------------------
 import random
 import numpy as np
 import matplotlib.pyplot as plt
@@ -183,15 +189,15 @@ def train(network, loss, loss_prime, x_train, y_train, epochs=1000, lr=0.01, opt
     plot_confusion_matrix(confusion_matrix)
     # Plot and save the training history
     fig, axs = plt.subplots(1, 2, figsize=(12, 6))
-    fig.suptitle('Training Statistics', fontsize=20)
+    fig.suptitle('Training History', fontsize=20)
     # Loss statistics
     axs[0].set_title("Loss")
     axs[0].plot(history["loss"])
-    axs[0].set(xlabel="Epoch")
+    axs[0].set(xlabel="Epoch", ylabel="MSE")
     # Accuracy statistics
     axs[1].set_title("Accuracy")
     axs[1].plot(history["acc"])
-    axs[1].set(xlabel="Epoch")
+    axs[1].set(xlabel="Epoch", ylabel="Accuracy")
 
     plt.savefig(f'{config.DST_FOLDER}/history.jpg')
 

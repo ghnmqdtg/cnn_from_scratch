@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------
+# Filename    : layers.py
+# Created By  : Ting-Wei, Zhang (ghnmqdtg)
+# Created Date: 2022/12/23
+# version ='1.0'
+# ----------------------------------------------------------------------------
 import numpy as np
 from scipy import signal
 
