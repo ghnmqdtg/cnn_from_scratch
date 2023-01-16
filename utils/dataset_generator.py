@@ -15,6 +15,7 @@ class DatasetGenerator:
     def __init__(self, folder_path):
         self.file_paths = utils.parse_folder(folder_path)
         self.label_path = self.file_paths.pop(-1)
+        # Only get 200 samples since I just wanted to classify 0 and 1
         self.file_paths = utils.parse_folder(folder_path)[:200]
 
     def prepare(self):
